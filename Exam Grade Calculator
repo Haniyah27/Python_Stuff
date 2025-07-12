@@ -1,0 +1,17 @@
+print("===Exam Grade Calculator===")
+nameOfExam = input("Enter the name of the exam: ")
+totalPoint = int(input("Enter the total amount of points on the exam: "))
+earnedPoint = float(input("Enter the amount of points you earned: "))
+result = (earnedPoint / totalPoint) * 100
+result = round(result, 1)
+print("Your grade for ", nameOfExam, "is", result, "%")
+if result >= 90:
+    print("You got an A!")
+elif result >= 80:
+    print("You got a B!")
+elif result >= 70:
+    print("You got a C...")
+elif result >= 60:
+    print("You got a D...")
+elif result >= 50:
+    print("You got an F..., you failed and need to retake the exam, BUT NO WORRIES, YOU CAN DO IT!")
