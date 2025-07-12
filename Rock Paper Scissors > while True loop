@@ -1,0 +1,38 @@
+from getpass import as input
+print("WELCOME TO THE EPIC BATTLE")
+print()
+print("Please print P (for paper), R (for rock), and S (for scissor) as your move")
+
+player1score = 0
+player2score = 0
+
+while True: 
+  Player1 = input("Player 1 move >")
+  print()
+  Player2 = input("Player 2 move >")
+
+  if Player1 == "R" and Player2 == "S": 
+    print("Player 1 wins this match!")
+    player1score += 1
+  elif Player1 == Player2:
+    print("TIE!)
+  elif Player1 == "P" and Player2 == "R"
+    print("Player 1 wins this match!")
+    player1score += 1
+  elif Player1 == "S" and Player2 == "P":
+    print("Player 1 wins!")
+    player1score += 1
+  else:
+    print("Player 2 wins!")
+    player2score += 1
+  
+  print() 
+  print("Player 1 has", player1score, "points")
+  print("Player 2 has", player2score, "points")
+  if player1score == 3 or player2score == 3:
+    print("thanks for playing")
+    exit()
+  else:
+    continue
+
+
