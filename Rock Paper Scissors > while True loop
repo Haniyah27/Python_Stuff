@@ -15,7 +15,7 @@ while True:
     print("Player 1 wins this match!")
     player1score += 1
   elif Player1 == Player2:
-    print("TIE!)
+    print("TIE!")
   elif Player1 == "P" and Player2 == "R"
     print("Player 1 wins this match!")
     player1score += 1
