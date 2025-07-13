@@ -1,0 +1,32 @@
+print("GUESS THE NUMBER GAME")
+print()
+
+correct_number = 8900
+tries = 1
+
+while True:
+    number = int(input("Enter a number between 1 and 10000: "))
+    if number < 0:
+        print("thats a negative number, GAME OVER")
+        exit()
+    if number > 10000:
+        print("thats a number over 10000, GAME OVER")
+        exit()
+    if number < correct_number :
+        print("Thats wayyy to low, go higher")
+        tries += 1
+    elif number > correct_number:
+        print("Thats wayyy to high, go lower")
+        tries += 1
+    elif number == correct_number:
+        print("You got it right, GOOD JOB you can basically read my mind!")
+        break
+    else:
+        print("I don't recognize that number, do it again")
+        tries += 1
+        continue
+if tries == 1:
+    print("It took you", tries, "try to guess the number")
+else:
+    print("It took you", tries, "tries to guess the number")
+        
