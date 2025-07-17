@@ -1,0 +1,23 @@
+import random 
+
+def rollDie (number):
+    result = random.randint(1, number)
+    return result
+
+def rollDie_6and8():
+    die6 = rollDie (6)
+    die8 = rollDie (8)
+    healthPoints = die6 * die8
+    return healthPoints
+haveAcharacter = "yes"
+
+print("Character stats generator")
+while haveAcharacter == "yes":
+  characterName = input("Enter character name: ")
+  healthPoints = str(rollDie_6and8())
+  print(characterName, "healthPoints: ", healthPoints, "hp")
+  haveAcharacter = input("Do you want to create another character? (yes/no): ")
+  if haveAcharacter == "no":
+      print("Goodbye")
+      exit()
+    
