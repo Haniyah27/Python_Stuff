@@ -1,0 +1,31 @@
+import random, os, time
+
+def rollDice(side):
+  result = random.randint(1, side)
+  return result
+
+def healthStat():
+  health = ((rollDice(6) * rollDice(12)) / 2) + 10
+  return health
+
+def strengthStat():
+  strength = ((rollDice(6) * rollDice(8)) / 2) + 10
+  return strength
+
+print("CREATE YOUR CHARACTER FOR LIFE")
+charName = input("Enter your character's name, *bonus* points for a unique name: ")
+charType = input("Enter your character's type (Human, Elf, Dwarf, Orc): ")
+  
+print(charName)
+print("HEALTH: ", healthStat())
+print("STRENGTH", strengthStat())
+
+print("May your name go down in legend...")
+again = input("Again? (y/n): ")
+if again == "y":
+  os.system('clear')
+  time.sleep(1)
+  os.system('python main.py')
+else:
+  print("Goodbye, traveler...")
+  os.system('clear')
