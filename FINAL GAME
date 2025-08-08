@@ -1,0 +1,63 @@
+import random, os, time
+
+def rollDice(side):
+  result = random.randint(1, side)
+  return result
+
+def healthStat():
+  health = ((rollDice(6) * rollDice(12)) / 2) + 10
+  return health
+
+def strengthStat():
+  strength = ((rollDice(6) * rollDice(8)) / 2) + 10
+  return strength
+
+while True:
+  print("CREATE YOUR CHARACTERS TO BATTLE TO THE DEATH!")
+  charName = input("Enter your character's name, *bonus* points for a unique name: ")
+  charType = input("Enter your character's type (Human, Elf, Dwarf, Orc): ")
+
+  print("CREATE YOUR CHARACTER #2 TO BATTLE TO THE DEATH!")
+  charName1 = input("Enter another character's name: ")
+  charType1 = input("Enter your character's type       (Human, Elf, Dwarf, Orc): ")
+
+  
+  char1_health = healthStat()
+  char1_strength = strengthStat()
+  char2_health = healthStat()
+  char2_strength = strengthStat()
+
+  print(charName)
+  print("HEALTH: ", char1_health)
+  print("STRENGTH", char1_strength)
+
+  print(charName1)
+  print("HEALTH: ", char2_health)
+  print("STRENGTH", char2_strength)
+
+  print("Lets fight and see who wins!")
+  
+
+  char1_total = char1_health + char1_strength
+  char2_total = char2_health + char2_strength
+  
+  if char1_total == char2_total:
+      print("It's a tie!")
+  elif char1_total > char2_total:
+      print(charName, "wins! And", charName1, "dies!")
+      char2_total = char2_total - char1_total
+  else:
+      print(charName1, "wins! And", charName, "dies!")
+      char1_total = char1_total - char2_total
+
+  print("May your fight go down in legend...")
+  
+ 
+  play_again = input("Play again? (y/n): ")
+  if play_again.lower() != 'y':
+      print("Goodbye, traveler...")
+      print(charName, ":",char1_total)
+      print(charName1, ":", char2_total)
+      break
+  
+  os.system('clear')
